@@ -6,6 +6,9 @@
 extern "C" int myProc();
 extern "C" int makeitDouble(int i);
 extern "C" int makeMul(int i, int j);
+extern "C" char doString(char st[]);
+extern "C" int doStrLen(char st[]);
+
 
 using namespace std;
 
@@ -13,13 +16,18 @@ int main()
 {
     int i = 5;
     int j = 8;
+    char chaine[] = "Salut !";
 
     cout << "Hello World!\n";
     cout << "Result of myProc (eax, sal) : " << myProc() << endl;
     cout << "Result of makeitDouble : " << makeitDouble(i) << endl;
     cout << "Result of makeMul : " << makeMul(i,j) << endl;
 
+    cout << "Result doSring : " << doString(chaine) << endl;
+    cout << "Result doStrLen : " << doStrLen(chaine) << endl;
 
+
+    cout << endl;
     cout << "*************** FIN DU PROGRAMME *************** " << endl;
 
 }
