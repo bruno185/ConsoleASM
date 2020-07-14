@@ -3,32 +3,40 @@
 
 #include <iostream>
 
+using namespace std;
+
 extern "C" int myProc();
 extern "C" int makeitDouble(int i);
 extern "C" int makeMul(int i, int j);
 extern "C" char doString(char st[]);
 extern "C" int doStrLen(char st[]);
+extern "C" int doStrLen2(string st);
 
-
-using namespace std;
 
 int main()
 {
     int i = 5;
     int j = 8;
-    char chaine[] = "Salut !";
+    string myStr = "ABCD";
 
-    cout << "Hello World!\n";
+
+    cout << "*************** DEB DU PROGRAMME ***************" << endl;
+    char chaine[] = "Salut !!";
+    printf(chaine);
+    cout << endl << "longeur de chaine = " << strlen(chaine) << endl;
+   
+
+    //cout << "Hello World!\n";
     cout << "Result of myProc (eax, sal) : " << myProc() << endl;
     cout << "Result of makeitDouble : " << makeitDouble(i) << endl;
     cout << "Result of makeMul : " << makeMul(i,j) << endl;
 
     cout << "Result doSring : " << doString(chaine) << endl;
     cout << "Result doStrLen : " << doStrLen(chaine) << endl;
-
-
+    cout << "Result doStrLen2 : " << doStrLen2(myStr) << endl;
+    
     cout << endl;
-    cout << "*************** FIN DU PROGRAMME *************** " << endl;
+    cout << "*************** FIN DU PROGRAMME ***************" << endl;
 
 }
 

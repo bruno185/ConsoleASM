@@ -36,14 +36,30 @@ doStrLen proc
 	mov rax,0		; init rax
 read:
 	mov al,[rcx]	; lit un caractere
-	cmp al,0
-	je fin			; fin de chaine  ? oui => fin
+	cmp al,0		; fin de chaine  ?
+	je fin			; oui => fin
 	inc ebx			; inc. compteur
 	inc rcx			; ajuste pointeur 
 	jmp read
 fin:
 	mov eax,ebx
-	ret				; renvoie le premier char de la chaine (dans AL)
+	ret				; renvoie le premier char de la chaine (dans eax)
 doStrLen endp
+
+doStrLen2 proc
+	mov rbx,0		; init rbx
+	mov rax,0		; init rax
+	add rcx,8		; ajustement pour la structure en mémoire des string en C++
+read:
+	mov al,[rcx]	; lit un caractere
+	cmp al,0		; fin de chaine  ?
+	je fin			; oui => fin
+	inc ebx			; inc. compteur
+	inc rcx			; ajuste pointeur 
+	jmp read
+fin:
+	mov eax,ebx
+	ret				; renvoie le premier char de la chaine (dans eax)
+doStrLen2 endp
 	
 end
