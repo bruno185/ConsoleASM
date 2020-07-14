@@ -4,11 +4,24 @@
 #include <iostream>
 
 extern "C" int myProc();
+extern "C" int makeitDouble(int i);
+extern "C" int makeMul(int i, int j);
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
-    std::cout << myProc();
+    int i = 5;
+    int j = 8;
+
+    cout << "Hello World!\n";
+    cout << "Result of myProc (eax, sal) : " << myProc() << endl;
+    cout << "Result of makeitDouble : " << makeitDouble(i) << endl;
+    cout << "Result of makeMul : " << makeMul(i,j) << endl;
+
+
+    cout << "*************** FIN DU PROGRAMME *************** " << endl;
+
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
