@@ -13,6 +13,7 @@ extern "C" int doStrLen(char st[]);
 extern "C" int doStrLen2(string st);
 
 
+
 int main()
 {
     int i = 5;
