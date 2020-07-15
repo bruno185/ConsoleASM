@@ -12,7 +12,7 @@ extern "C" char doString(char st[]);
 extern "C" int doStrLen(char st[]);
 extern "C" int doStrLen2(string st);
 
-
+// commentaire
 
 int main()
 {
