@@ -31,7 +31,7 @@ doString proc
 	ret				; renvoie le premier char de la chaine (dans AL)
 doString endp
 
-doStrLen proc
+doCharLen proc
 	mov rbx,0		; init rbx
 	mov rax,0		; init rax
 read:
@@ -44,9 +44,9 @@ read:
 fin:
 	mov eax,ebx
 	ret				; renvoie le premier char de la chaine (dans eax)
-doStrLen endp
+doCharLen endp
 
-doStrLen2 proc
+doStrLen proc
 	mov rbx,0		; init rbx
 	mov rax,0		; init rax
 	add rcx,8		; ajustement pour la structure en mémoire des string en C++
@@ -60,6 +60,6 @@ read:
 fin:
 	mov eax,ebx
 	ret				; renvoie le premier char de la chaine (dans eax)
-doStrLen2 endp
+doStrLen endp
 	
 end

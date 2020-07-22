@@ -9,8 +9,8 @@ extern "C" int myProc();
 extern "C" int makeitDouble(int i);
 extern "C" int makeMul(int i, int j);
 extern "C" char doString(char st[]);
-extern "C" int doStrLen(char st[]);
-extern "C" int doStrLen2(string st);
+extern "C" int doCharLen(char st[]);
+extern "C" int doStrLen(string st);
 
 
 int main()
@@ -18,6 +18,7 @@ int main()
     int i = 5;
     int j = 8;
     string myStr = "ABCD";
+    // myStr = myStr + myStr + "   ";
 
 
     cout << "*************** DEB DU PROGRAMME ***************" << endl;
@@ -32,8 +33,8 @@ int main()
     cout << "Result of makeMul : " << makeMul(i,j) << endl;
 
     cout << "Result doSring : " << doString(chaine) << endl;
-    cout << "Result doStrLen : " << doStrLen(chaine) << endl;
-    cout << "Result doStrLen2 : " << doStrLen2(myStr) << endl;
+    cout << "Result doCharLen : " << doCharLen(chaine) << endl;
+    cout << "Result doStrLen : " << doStrLen(myStr) << endl;
     
     cout << endl;
     cout << "*************** FIN DU PROGRAMME ***************" << endl;
