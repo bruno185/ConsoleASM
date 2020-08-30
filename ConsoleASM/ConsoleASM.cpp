@@ -11,6 +11,8 @@ extern "C" int makeMul(int i, int j);
 extern "C" char doString(char st[]);
 extern "C" int doCharLen(char st[]);
 extern "C" int doStrLen(string st);
+extern "C" int doTab(int[],int);
+extern "C" int doReadLocal();
 
 // commentaire
 
@@ -18,8 +20,15 @@ int main()
 {
     int i = 5;
     int j = 8;
+    const int maxtab = 20;
     string myStr = "ABCD";
     // myStr = myStr + myStr + "   ";
+
+    int myNum[maxtab];
+    for (i = 0; i < maxtab; i++) {
+        myNum[i] = i * i;
+    }
+
 
 
     cout << "*************** DEB DU PROGRAMME ***************" << endl;
@@ -36,6 +45,10 @@ int main()
     cout << "Result doSring : " << doString(chaine) << endl;
     cout << "Result doCharLen : " << doCharLen(chaine) << endl;
     cout << "Result doStrLen : " << doStrLen(myStr) << endl;
+
+    cout << "Result doReadLocal() before modif. variable globale : " << doReadLocal() << endl; 
+    cout << "Result doTab(myNum, 3) : " << doTab(myNum, 3) << endl; // récupère le 3ème élément du tableau
+    cout << "Result doReadLocal() after modif. variable globale : " << doReadLocal() << endl;
     
     cout << endl;
     cout << "*************** FIN DU PROGRAMME ***************" << endl;

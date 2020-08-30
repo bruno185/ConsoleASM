@@ -1,5 +1,6 @@
 .data 
 var1 dd 3
+bool DWORD  10
 
 .code
 
@@ -43,7 +44,7 @@ read:
 	jmp read
 fin:
 	mov eax,ebx
-	ret				; renvoie le premier char de la chaine (dans eax)
+	ret				; renvoie la longueur de la chaine (dans eax)
 doCharLen endp
 
 doStrLen proc
@@ -59,7 +60,22 @@ read:
 	jmp read
 fin:
 	mov eax,ebx
-	ret				; renvoie le premier char de la chaine (dans eax)
+	ret				; renvoie la longueur de la chaine (dans eax)
 doStrLen endp
-	
+
+doTab proc
+	shl rdx,2 ; indice du tableau mul by 4 (4 octets par élément du tableau)
+	mov eax, dword ptr [rcx+rdx] ; élément du tableau ==> rax
+	add bool,eax ; pour vérifier que la variable est commune à toutes les proc  (cf. proc doReadLocal) 
+	ret
+doTab endp
+
+doReadLocal proc
+	mov eax, bool ; = eax,dword ptr [bool]
+	; equivant à :
+	; 	lea rbx,bool
+	;	mov eax,dword ptr [rbx]
+	ret
+doReadLocal endp
+
 end
