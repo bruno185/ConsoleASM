@@ -6,16 +6,16 @@ bool DWORD  10
 
 myProc proc
 	mov eax,var1
-	sal eax,1
+	shl eax,1
 	mov var1,eax
 	;mov eax,var1
-	sal eax,1
+	shl eax,1
 	ret
 myProc endp
 
 makeitDouble proc
 	mov eax,ecx
-	sal eax,1
+	shl eax,1
 	ret
 makeitDouble endp
 
