@@ -52,7 +52,7 @@ int main()
     
     cout << endl;
     cout << "*************** FIN DU PROGRAMME ***************" << endl;
-
+    // test
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
