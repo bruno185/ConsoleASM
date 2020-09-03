@@ -78,4 +78,29 @@ doReadLocal proc
 	ret
 doReadLocal endp
 
+BubbleSort proc
+; rcx : tab ptr
+; rdx tab length
+; rbx : booean = changed
+deb: 
+	cmp rdx,1
+	ja suite1
+	ret
+suite1:
+	mov rbx, 0					; changed = false
+	mov eax, dword ptr [rcx]	; ptr to first element 
+	cmp eax, dword ptr [rcx+4]
+	ja permut
+	ret
+permut:
+	push rax			; save element tab[i] :  dword ptr [rcx]
+	mov eax,dword ptr [rcx+4] ; eax = next element : dword ptr [rcx+4]
+	mov dword ptr [rcx], eax	;tab[i] = tab[i+1]
+	pop rax						; get element tab[i]
+	mov dword ptr [rcx],eax		;tab[i+1]= i
+	mov ebx,1		; changed = true
+
+	ret
+BubbleSort endp
+
 end

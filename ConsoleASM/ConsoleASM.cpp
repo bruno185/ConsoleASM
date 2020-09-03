@@ -13,6 +13,8 @@ extern "C" int doCharLen(char st[]);
 extern "C" int doStrLen(string st);
 extern "C" int doTab(int[],int);
 extern "C" int doReadLocal();
+extern "C" void BubbleSort(int[], int);
+
 
 // commentaire
 
@@ -49,10 +51,18 @@ int main()
     cout << "Result doReadLocal() before modif. variable globale : " << doReadLocal() << endl; 
     cout << "Result doTab(myNum, 3) : " << doTab(myNum, 3) << endl; // récupère le 3ème élément du tableau
     cout << "Result doReadLocal() after modif. variable globale : " << doReadLocal() << endl;
-    
-    cout << endl;
+
+
+    myNum[0] = 11;
+    myNum[1] = 1;
+    cout << "Call BubbleSort done" << myNum[0] << endl;
+    cout << "Call BubbleSort done" << myNum[1] << endl;
+    BubbleSort(myNum, maxtab);
+    cout << "Call BubbleSort done"<< myNum[0] << endl;
+    cout << "Call BubbleSort done" << myNum[1] << endl;
+
     cout << "*************** FIN DU PROGRAMME ***************" << endl;
-    // test
+   
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
